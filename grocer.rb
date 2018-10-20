@@ -32,9 +32,9 @@ end
 
 def apply_clearance(cart)
   # code here
-  cart.each do |key1, value1|
-    if value1[:clearance]
-      cart[key1][:price] = value1[:price] - (value1[:price] * 0.20)
+  cart.each do |key, value|
+    if value[:clearance]
+      value[:price] = value1[:price] - (value1[:price] * 0.20)
     end
   end
   cart
