@@ -43,12 +43,13 @@ end
 def checkout(cart, coupons)
   # code here
   #binding.pry
-  cart = apply_coupons(cart, coupons)
-  cart = apply_clearance(cart)
+  consolidated_cart = consolidate_cart(cart)
+  coupons_applied = apply_coupons(consolidated_cart, coupons)
+  clearance_applied = apply_clearance(coupons_applied)
   
   sub_total = 0
-  cart.each do |items|
-    #binding.pry
+  clearance_applied.each do |key, value|
+    binding.pry
     sub_total += items[:price]
   end
   sub_total
