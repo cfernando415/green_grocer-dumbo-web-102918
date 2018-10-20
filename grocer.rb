@@ -43,7 +43,7 @@ end
 def checkout(cart, coupons)
   # code here
   cart = apply_coupons(cart, coupons)
-  binding.pry
+  #binding.pry
   cart = apply_clearance(cart)
   
   sub_total = 0
