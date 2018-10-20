@@ -56,5 +56,5 @@ def checkout(cart, coupons)
     sub_total = sub_total * 0.9
   end
   sub_total
-  binding.pry
+  #binding.pry
 end
