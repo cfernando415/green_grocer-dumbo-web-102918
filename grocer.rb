@@ -48,7 +48,7 @@ def checkout(cart, coupons)
   
   sub_total = 0
   cart.each do |items|
-    binding.pry
+    #binding.pry
     sub_total += items[:price]
   end
   sub_total
