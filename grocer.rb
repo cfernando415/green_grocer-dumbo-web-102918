@@ -52,5 +52,6 @@ def checkout(cart, coupons)
     #binding.pry
     sub_total += value[:price]
   end
-  if sub_total
+  if sub_total > 100
+    sub_total = sub_total * 0.9
 end
