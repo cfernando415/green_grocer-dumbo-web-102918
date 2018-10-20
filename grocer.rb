@@ -30,7 +30,7 @@ def apply_coupons(cart, coupons)
         end
       end
     end
-    result[key] = 
+    result[key] = value
   end
 end
 
