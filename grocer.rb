@@ -32,6 +32,7 @@ def apply_coupons(cart, coupons)
     end
     result[key] = value
   end
+  result
 end
 
 def apply_clearance(cart)
