@@ -17,17 +17,20 @@ end
 
 def apply_coupons(cart, coupons)
   # code here
-  coupons.each do |coupon|
-    if cart.has_key? coupon[:item]
-      if cart.has_key?(coupon[:item] + " W/COUPON") && coupon[:num] <= cart[coupon[:item]][:count]
-        cart[coupon[:item] + " W/COUPON"][:count] += 1
-      else
-        cart[coupon[:item] + " W/COUPON"] = {:price => coupon[:cost], :clearance => cart[coupon[:item]][:clearance], :count => 1}
+  cart.each do |key, value|
+    binding.pry
+    coupons.each do |coupon|
+      if key == coupon[:item]
+        if key == coupon[:item] + " W/COUPON" && coupon[:num] <= cart[coupon[:item]][:count]
+          cart[coupon[:item]][:count] -= coupon[:num]
+          cart[coupon[:item] + " W/COUPON"][:count] += 1
+        else
+          cart[coupon[:item] + " W/COUPON"] = {:price => coupon[:cost], :clearance => cart[coupon[:item]][:clearance], :count => 1}
+        end
       end
-      cart[coupon[:item]][:count] -= coupon[:num]
     end
+    cart
   end
-  cart
 end
 
 def apply_clearance(cart)
