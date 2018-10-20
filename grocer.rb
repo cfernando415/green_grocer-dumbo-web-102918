@@ -47,7 +47,7 @@ def checkout(cart, coupons)
   #cart = apply_clearance(cart)
   
   sub_total = 0
-  cart.each do |key, value|
+  cart.each do |key|
     binding.pry
     sub_total += value[:price]
   end
